@@ -1,0 +1,35 @@
+orchestrator:
+  tick_rate_ms: 1.0
+  health_check_interval_s: 10
+  auto_heal: true
+
+drl:
+  agent_type: "PPO"
+  learning_rate: 0.0003
+  batch_size: 64
+  discount_factor: 0.99
+  
+energy:
+  power_cap_watts: 50000
+  optimization_mode: "balanced"
+  
+slicing:
+  max_slices: 1000
+  oversubscription_ratio: 1.5
+  default_policy: "PREEMPTIVE"
+  
+mlops:
+  model_registry: "local"
+  retraining_interval_hours: 24
+  
+monitoring:
+  sampling_rate_ms: 10
+  metrics_backend: "prometheus"
+  
+security:
+  isolation_level: "high"
+  encryption: true
+  
+simulation:
+  enabled: false
+  scenario: "urban_dense"

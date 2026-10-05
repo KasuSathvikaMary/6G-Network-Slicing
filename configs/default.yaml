@@ -1,0 +1,103 @@
+seed: 42
+episode_length: 288
+
+resources:
+  total_prbs: 100
+  total_cus: 50
+
+power:
+  p_idle: 100.0
+  alpha: 200.0
+  beta: 100.0
+
+slices:
+  - name: "eMBB_XR"
+    type: "embb"
+    priority: 2
+    base_demand_prb: 30.0
+    base_demand_cu: 15.0
+    qos_throughput_threshold: 0.8
+    qos_latency_threshold: 20.0
+    qos_loss_threshold: 0.01
+    floor_fraction: 0.10
+    daily_phase: 0.0
+    burst_prob: 0.03
+    burst_magnitude: 3.0
+    noise_std: 0.05
+  - name: "URLLC"
+    type: "urllc"
+    priority: 3
+    base_demand_prb: 15.0
+    base_demand_cu: 10.0
+    qos_throughput_threshold: 0.95
+    qos_latency_threshold: 1.0
+    qos_loss_threshold: 0.001
+    floor_fraction: 0.10
+    daily_phase: 1.57
+    burst_prob: 0.01
+    burst_magnitude: 2.0
+    noise_std: 0.03
+  - name: "Healthcare"
+    type: "healthcare"
+    priority: 4
+    base_demand_prb: 10.0
+    base_demand_cu: 8.0
+    qos_throughput_threshold: 0.9
+    qos_latency_threshold: 5.0
+    qos_loss_threshold: 0.01
+    floor_fraction: 0.10
+    daily_phase: 0.0
+    burst_prob: 0.005
+    burst_magnitude: 2.0
+    noise_std: 0.02
+  - name: "mMTC"
+    type: "mmtc"
+    priority: 1
+    base_demand_prb: 20.0
+    base_demand_cu: 8.0
+    qos_throughput_threshold: 0.5
+    qos_latency_threshold: 100.0
+    qos_loss_threshold: 0.05
+    floor_fraction: 0.10
+    daily_phase: 3.14
+    burst_prob: 0.02
+    burst_magnitude: 2.5
+    noise_std: 0.08
+
+reward:
+  w1: 1.0
+  w2: 0.3
+  w3: 2.0
+
+drl:
+  algorithm: "PPO"
+  learning_rate: 0.0003
+  gamma: 0.99
+  n_steps: 2048
+  batch_size: 64
+  n_epochs: 10
+  clip_range: 0.2
+  net_arch: [64, 64]
+  total_timesteps: 200000
+  eval_freq: 10000
+  n_eval_episodes: 5
+
+drift:
+  psi_threshold: 0.2
+  reward_degradation_threshold: 0.3
+  window_size: 50
+  consecutive_alerts: 10
+  retrain_timesteps: 50000
+
+audit:
+  consensus_delay_ms: 0.0
+
+explainability:
+  n_background_samples: 100
+  n_explanation_samples: 100
+  surrogate_max_depth: 8
+  n_surrogate_samples: 1000
+
+experiment:
+  n_seeds: 10
+  base_seed: 42

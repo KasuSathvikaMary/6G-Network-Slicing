@@ -1,0 +1,2 @@
+base_config: "../default.yaml"
+scenario_name: "scenario_a"

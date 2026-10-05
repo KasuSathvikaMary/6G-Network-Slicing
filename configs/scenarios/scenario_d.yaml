@@ -1,0 +1,16 @@
+base_config: "../default.yaml"
+scenario_name: "scenario_d"
+slices:
+  - name: "eMBB_XR"
+    daily_phase: 3.141592653589793
+    burst_prob: 0.01
+    noise_std: 0.1
+  - name: "URLLC"
+    daily_phase: 4.711592653589793
+    noise_std: 0.06
+  - name: "Healthcare"
+    daily_phase: 3.141592653589793
+    noise_std: 0.04
+  - name: "mMTC"
+    daily_phase: 6.281592653589793
+    noise_std: 0.16

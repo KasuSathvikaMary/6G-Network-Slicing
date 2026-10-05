@@ -1,0 +1,8 @@
+base_config: "../default.yaml"
+scenario_name: "scenario_c"
+slices:
+  - name: "eMBB_XR"
+    base_demand_prb: 60.0
+    base_demand_cu: 30.0
+    burst_prob: 0.2
+    burst_magnitude: 4.0

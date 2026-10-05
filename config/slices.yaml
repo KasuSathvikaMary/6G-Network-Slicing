@@ -1,0 +1,36 @@
+templates:
+  XR:
+    bandwidth_mbps: 30000.0
+    latency_ms: 1.0
+    compute_cores: 16
+    memory_gb: 32.0
+    priority: 1
+    sla_reliability_pct: 99.99
+    max_devices: 1000
+    
+  uRLLC:
+    bandwidth_mbps: 100.0
+    latency_ms: 0.1
+    compute_cores: 8
+    memory_gb: 16.0
+    priority: 2
+    sla_reliability_pct: 99.999
+    max_devices: 5000
+    
+  mMTC:
+    bandwidth_mbps: 1000.0
+    latency_ms: 50.0
+    compute_cores: 4
+    memory_gb: 8.0
+    priority: 3
+    sla_reliability_pct: 99.9
+    max_devices: 1000000
+    
+  eMBB:
+    bandwidth_mbps: 10000.0
+    latency_ms: 10.0
+    compute_cores: 8
+    memory_gb: 16.0
+    priority: 4
+    sla_reliability_pct: 99.9
+    max_devices: 50000

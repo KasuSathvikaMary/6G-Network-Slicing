@@ -1,0 +1,17 @@
+base_config: "../default.yaml"
+scenario_name: "scenario_e"
+scale_factors: [4, 8, 16]
+template_slice:
+  name: "template_eMBB"
+  type: "embb"
+  priority: 2
+  base_demand_prb: 10.0
+  base_demand_cu: 5.0
+  qos_throughput_threshold: 0.8
+  qos_latency_threshold: 20.0
+  qos_loss_threshold: 0.01
+  floor_fraction: 0.05
+  daily_phase: 0.0
+  burst_prob: 0.05
+  burst_magnitude: 3.0
+  noise_std: 0.05
